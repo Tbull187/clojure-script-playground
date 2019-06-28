@@ -1,6 +1,6 @@
 # clojure-script-todo
 
-FIXME: Write a one-line description of your library/project.
+Hold on to your hats, it's a TODO APP!
 
 ## Overview
 

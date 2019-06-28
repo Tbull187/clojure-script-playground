@@ -1,6 +1,17 @@
-/* some style */
+/* global styles */
 
 body {
     font-family: "Roboto";
 }
 
+.counter-container {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.button-spacer {
+    width: 10px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}

@@ -1,9 +1,8 @@
 (ns app.core
     (:require [reagent.core]
-              [components.core]))
+              [components.todo]))
 
 (enable-console-print!)
-(println "This text is printed from src/clojure-script-test-project/core.cljs. Go ahead and edit it and see reloading in action.")
 
 ;; define your app data so that it doesn't get over-written on reload
 (defonce app-state (atom {:text "Hello world!"}))
@@ -14,6 +13,5 @@
   ;; (swap! app-state update-in [:__figwheel_counter] inc)
 )
 
-;; Mount React
-(reagent.core/render [components.core/todo-app]
+(reagent.core/render [components.todo/todo-app]
  (js/document.getElementById "app"))
