@@ -2,24 +2,59 @@
   (:require [reagent.core :as r]
             [components.counter]))
 
+; Todos is just a list of strings
 (defonce todos (r/atom (vector)))
-
-(defn todo-item [text]
-  (fn []
-    [:li text]))
 
 (defn add-todo [todo-text]
   (js/console.log "Adding Todo Item with text:" todo-text)
-  (swap! todos assoc todo-text))
+  (swap! todos conj todo-text))
 
-(defn todo-main []
-   [:<>
-    [components.counter/counter]
-    [:input {:type "text" :placeholder "Enter a todo..."}]
-    [:input {:type "button" :value "Add" :on-click #(add-todo "I am a todo added d Y n A m I c A l L y!")}]
-    [:ul#todo-list @todos]])
+(defn delete-todo [todo-text]
+  (js/console.log "Deleting todo:" todo-text)
+  ;swap! takes a function that recieves the current value, which you can use for updating.
+  (swap! todos (fn [c] (remove #{todo-text} c))))
+
+
+(defn todo-elem [text]
+  (fn []
+    [:li.list-item
+     [:span text]
+     [:div.button-spacer]
+     [:input {:type "button" :value "Delete" :on-click #(delete-todo text)}]]))
+
+(defn todo-form []
+  (let [val        (r/atom "")
+        reset-val #(reset! val "")]
+    (fn []
+      [:<>
+       [:input
+        {:type "text"
+         :value @val
+         :on-change #(reset! val (-> % .-target .-value))
+         ;:on-key-down
+         :placeholder "Enter a todo..."}]
+
+       [:div.button-spacer]
+
+       [:input
+        {:type "button"
+         :value "Add"
+         :on-click (fn [] (add-todo @val) (reset-val))}]
+       [:div.button-spacer]
+       [:input
+        {:type "button"
+         :value "Clear Todos"
+         :on-click #(reset! todos [])}]
+       [:ul#todo-list
+        (for [todo @todos]
+          ^{:key todo} [todo-elem todo])]])))
+
 
 (defn todo-app []
   [:div.todo-container
-   [:h2 "ClojureScript TODO!"]
-   [todo-main]])
+   [:h2 "ClojureScript Playground!"]
+   [:h3 "Counter:"]
+   [components.counter/counter]
+   [:h3 "Todo:"]
+   [:div {:on-click #(js/console.log @todos)} "Log Todos"]
+   [todo-form]])
