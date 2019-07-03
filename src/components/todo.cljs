@@ -1,6 +1,7 @@
 (ns components.todo
   (:require [reagent.core :as r]
-            [components.counter]))
+            [components.counter]
+            [services.request :as service]))
 
 ; Todos is just a list of strings
 (defonce todos (r/atom (vector)))
@@ -31,7 +32,9 @@
         {:type "text"
          :value @val
          :on-change #(reset! val (-> % .-target .-value))
-         ;:on-key-down
+         :on-key-down #(case (.-key %)
+                         "Enter" (do (add-todo @val)(reset-val)) 
+                         nil)
          :placeholder "Enter a todo..."}]
 
        [:div.button-spacer]
@@ -40,7 +43,9 @@
         {:type "button"
          :value "Add"
          :on-click (fn [] (add-todo @val) (reset-val))}]
+
        [:div.button-spacer]
+
        [:input
         {:type "button"
          :value "Clear Todos"
@@ -56,5 +61,6 @@
    [:h3 "Counter:"]
    [components.counter/counter]
    [:h3 "Todo:"]
-   [:div {:on-click #(js/console.log @todos)} "Log Todos"]
-   [todo-form]])
+   [todo-form]
+   [:input {:type "button" :value "fetch-data" :on-click #(service/fetch-data)}]
+   [:div#users]])
