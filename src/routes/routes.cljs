@@ -1,8 +1,20 @@
 (ns routes.routes
   (:import goog.history.Html5History)
-  (:require [secretary.core :as secretary :refer-macros [defroute]]
+  (:require [reagent.core :as reagent]
+            [secretary.core :as secretary :refer-macros [defroute]]
+            
             [goog.events :as events]
-            [goog.history.EventType :as EventType]))
+            [goog.history.EventType :as EventType]
+            
+            [components.navigation]
+            [components.todo]
+            [components.counter]
+            [components.request]))
+
+(defonce app-state (reagent/atom {}))
+
+(defn test []
+  (js/console.log "routes init"))
 
 (defn hook-browser-navigation! []
   (doto (Html5History.)
@@ -16,27 +28,30 @@
   (secretary/set-config! :prefix "#")
 
   (defroute "/" []
+    ;; sets the key :page in app-state to the symbol :home
     (swap! app-state assoc :page :home))
 
-  (defroute "/about" []
-    (swap! app-state assoc :page :about))
+  (defroute "/todo" []
+    (swap! app-state assoc :page :todo))
+
+  (defroute "/counter" []
+    (swap! app-state assoc :page :counter))
+
+  (defroute "/network-request" []
+    (swap! app-state assoc :page :network-request))
 
   (hook-browser-navigation!))
 
-(defn home []
-  [:div [:h1 "Home Page"]
-   [:a {:href "#/about"} "about page"]])
 
-(defn about []
-  [:div [:h1 "About Page"]
-   [:a {:href "#/"} "home page"]])
-
-;; Dispatch function
 (defmulti current-page #(@app-state :page))
 (defmethod current-page :home []
-  [home])
-(defmethod current-page :about []
-  [about])
+  [components.navigation/main])
+(defmethod current-page :todo []
+  [components.todo/todo-app])
+(defmethod current-page :counter []
+  [components.counter/counter])
+(defmethod current-page :network-request []
+  [components.request/main])
 (defmethod current-page :default []
-  [:div])
+  [:div "Wat? dis da default page dum dum"])
 

@@ -1,7 +1,5 @@
 (ns components.todo
-  (:require [reagent.core :as r]
-            [components.counter]
-            [services.request :as service]))
+  (:require [reagent.core :as r]))
 
 ; Todos is just a list of strings
 (defonce todos (r/atom (vector)))
@@ -60,6 +58,5 @@
    [:h2 "ClojureScript Playground!"]
    [:h3 "Todo:"]
    [todo-form]
-   [:input {:type "button" :value "fetch-data" :on-click #(service/fetch-data)}]
    [:div#users]
    [:a {:href "#/"} "Home"]])
