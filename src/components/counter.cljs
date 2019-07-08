@@ -17,5 +17,6 @@
    [:div.button-spacer]
    [:input {:type "button" :value "Inc!" :on-click #(inc-counter)}]
    [:div.button-spacer]
-   [:input {:type "button" :value "Clear!" :on-click #(clear-counter)}]])
+   [:input {:type "button" :value "Clear!" :on-click #(clear-counter)}]
+   [:a {:href "#/"} "Home"]])
 
