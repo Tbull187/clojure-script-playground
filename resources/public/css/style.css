@@ -1,12 +1,7 @@
-/* global styles */
+/* GLOBALS */
 
 body {
     font-family: "Roboto";
-}
-
-.counter-container {
-    display: flex;
-    margin-bottom: 20px;
 }
 
 .button-spacer {
@@ -16,6 +11,25 @@ body {
     padding: 0;
 }
 
+/* NAVIGATION TOP CONTAINER */
+.app-container {
+    height: 100vh;
+    width: 100vw;
+}
+
+.app-header {
+    height: 100px;
+    background-image: linear-gradient(to right, #0f2242, #2351a1);
+}
+
+/* COUNTER */
+.counter-container {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+
+/* TODO */
 .list-item {
     display: flex;
     justify-content: space-between;

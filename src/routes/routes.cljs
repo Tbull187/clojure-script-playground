@@ -13,7 +13,7 @@
 
 (defonce app-state (reagent/atom {}))
 
-(defn test []
+(defn testy []
   (js/console.log "routes init"))
 
 (defn hook-browser-navigation! []
@@ -42,16 +42,11 @@
 
   (hook-browser-navigation!))
 
-
+;; going to end up refactoring this...
 (defmulti current-page #(@app-state :page))
-(defmethod current-page :home []
-  [components.navigation/main])
-(defmethod current-page :todo []
-  [components.todo/todo-app])
-(defmethod current-page :counter []
-  [components.counter/counter])
-(defmethod current-page :network-request []
-  [components.request/main])
-(defmethod current-page :default []
-  [:div "Wat? dis da default page dum dum"])
+(defmethod current-page :home [] [components.navigation/main])
+(defmethod current-page :todo [] [components.todo/todo-app])
+(defmethod current-page :counter [] [components.counter/counter])
+(defmethod current-page :network-request [] [components.request/main])
+(defmethod current-page :default [] [:div "Wat? dis da default page dum dum"])
 
