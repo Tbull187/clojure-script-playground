@@ -63,4 +63,5 @@
    [:h3 "Todo:"]
    [todo-form]
    [:input {:type "button" :value "fetch-data" :on-click #(service/fetch-data)}]
-   [:div#users]])
+   [:div#users]
+   [:a {:href "#/about"} "About Page"]])
