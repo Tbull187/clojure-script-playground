@@ -6,6 +6,7 @@
             [goog.events :as events]
             [goog.history.EventType :as EventType]
             
+            [components.container]
             [components.header]
             [components.todo]
             [components.counter]
@@ -52,7 +53,10 @@
 
 ;; going to end up refactoring this...
 (defmulti current-page #(@app-state :page))
-(defmethod current-page :home [] [components.header/main])
+
+; (defmethod current-page :home [] [components.header/app-header])
+(defmethod current-page :home [] [components.container/app-container])
+
 (defmethod current-page :todo [] [components.todo/todo-app])
 (defmethod current-page :counter [] [components.counter/counter])
 (defmethod current-page :network-request [] [components.request/main])

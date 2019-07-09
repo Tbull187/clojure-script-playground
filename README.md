@@ -1,10 +1,14 @@
-# clojure-script-todo
+# ClojureScript Playground
 
-Hold on to your hats, it's a TODO APP!
+More than just a TODO app!
 
 ## Overview
 
-A simple Todo app built with ClojureScript/Reagent.
+A collection of simple components / functionaly written in ClojureScript and corresponding libraries. Currently includes:
+* A counter app
+* A todo app
+* Data fetch example
+* More to come...
 
 ## Setup
 
@@ -31,6 +35,15 @@ To create a production build run:
 
 And open your browser in `resources/public/index.html`. You will not
 get live reloading, nor a REPL.
+
+## Layout
+
+Current layout looks like:
+* app-container
+  * app-header
+  * app-body
+    * app-sidebar
+    * content-div
 
 ## License
 
