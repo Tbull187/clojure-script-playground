@@ -6,8 +6,7 @@
             [goog.events :as events]
             [goog.history.EventType :as EventType]
             
-            [components.container]
-            [components.header]
+            [components.layout.container]            
             [components.todo]
             [components.counter]
             [components.request]))
@@ -55,7 +54,7 @@
 (defmulti current-page #(@app-state :page))
 
 ; (defmethod current-page :home [] [components.header/app-header])
-(defmethod current-page :home [] [components.container/app-container])
+(defmethod current-page :home [] [components.layout.container/app-container])
 
 (defmethod current-page :todo [] [components.todo/todo-app])
 (defmethod current-page :counter [] [components.counter/counter])

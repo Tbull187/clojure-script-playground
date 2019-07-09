@@ -2,11 +2,11 @@
   (:import goog.history.Html5History)
   (:require [reagent.core :as reagent]
             [routes.routes :as routes]
-            [components.container]))
+            [components.layout.container]))
 
 (enable-console-print!)
 
-;; APP STATE (doesn't get over-written on reload)
+;; APP STATE used to live here
 ; (defonce app-state (reagent/atom {}))
 
 
@@ -22,5 +22,5 @@
 
 (defn ^:export main []
   (routes/app-routes)
-  (reagent/render [components.container/app-container]
+  (reagent/render [components.layout.container/app-container]
                   (js/document.getElementById "app")))
