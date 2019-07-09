@@ -1,4 +1,4 @@
-(ns routes.routes
+(ns app.routes
   (:import goog.history.Html5History)
   (:require [reagent.core :as reagent]
             [secretary.core :as secretary :refer-macros [defroute]]
@@ -16,12 +16,9 @@
 
 ;; SCHEMA
 ;; {
-;;  :page "symbol- The name of the current page"
+;;  :content "symbol- The content component that should be displayed in div#content"
 ;; }
 (defonce app-state (reagent/atom {}))
-
-(defonce content-div (js/document.getElementById "content"))
-
 
 
 (defn hook-browser-navigation! []
@@ -32,30 +29,30 @@
        (secretary/dispatch! (.-token event))))
     (.setEnabled true)))
 
+
 (defn app-routes []
   (secretary/set-config! :prefix "#")
 
   (defroute "/" []
-    ;; sets the key :page in app-state to the symbol :home
-    (swap! app-state assoc :page :home))
+    (swap! app-state assoc :content :home))
 
+  ;; When we match the route /todo
+    ;; display the todo-app component in the div#content
+  
   (defroute "/todo" []
-    (swap! app-state assoc :page :todo))
+    (swap! app-state assoc :content :todo))
 
   (defroute "/counter" []
-    (swap! app-state assoc :page :counter))
+    (swap! app-state assoc :content :counter))
 
   (defroute "/network-request" []
-    (swap! app-state assoc :page :network-request))
+    (swap! app-state assoc :content :network-request))
 
   (hook-browser-navigation!))
 
-;; going to end up refactoring this...
-(defmulti current-page #(@app-state :page))
 
-; (defmethod current-page :home [] [components.header/app-header])
+(defmulti current-page #(@app-state :content))
 (defmethod current-page :home [] [components.layout.container/app-container])
-
 (defmethod current-page :todo [] [components.todo/todo-app])
 (defmethod current-page :counter [] [components.counter/counter])
 (defmethod current-page :network-request [] [components.request/main])

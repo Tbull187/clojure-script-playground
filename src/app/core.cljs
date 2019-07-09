@@ -1,7 +1,7 @@
 (ns app.core
   (:import goog.history.Html5History)
   (:require [reagent.core :as reagent]
-            [routes.routes :as routes]
+            [app.routes :as routes]
             [components.layout.container]))
 
 (enable-console-print!)
