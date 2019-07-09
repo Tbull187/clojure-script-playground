@@ -8,7 +8,6 @@
 ;; APP STATE (doesn't get over-written on reload)
 ; (defonce app-state (reagent/atom {}))
 
-(routes/testy)
 
 (defn on-js-reload []
   ;; optionally touch your app-state to force rerendering depending on your application

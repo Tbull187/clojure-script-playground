@@ -6,15 +6,23 @@
             [goog.events :as events]
             [goog.history.EventType :as EventType]
             
-            [components.navigation]
+            [components.header]
             [components.todo]
             [components.counter]
             [components.request]))
 
+
+(js/console.log "routes init")
+
+;; SCHEMA
+;; {
+;;  :page "symbol- The name of the current page"
+;; }
 (defonce app-state (reagent/atom {}))
 
-(defn testy []
-  (js/console.log "routes init"))
+(defonce content-div (js/document.getElementById "content"))
+
+
 
 (defn hook-browser-navigation! []
   (doto (Html5History.)
@@ -44,7 +52,7 @@
 
 ;; going to end up refactoring this...
 (defmulti current-page #(@app-state :page))
-(defmethod current-page :home [] [components.navigation/main])
+(defmethod current-page :home [] [components.header/main])
 (defmethod current-page :todo [] [components.todo/todo-app])
 (defmethod current-page :counter [] [components.counter/counter])
 (defmethod current-page :network-request [] [components.request/main])
