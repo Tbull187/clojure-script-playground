@@ -2,7 +2,7 @@
   (:import goog.history.Html5History)
   (:require [reagent.core :as reagent]
             [app.routes :as routes]
-            [components.layout.container]))
+            [components.layout.container :refer :all]))
 
 (enable-console-print!)
 
@@ -22,5 +22,5 @@
 
 (defn ^:export main []
   (routes/app-routes)
-  (reagent/render [components.layout.container/app-container]
+  (reagent/render [app-container]
                   (js/document.getElementById "app")))
