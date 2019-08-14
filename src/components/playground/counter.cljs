@@ -1,4 +1,4 @@
-(ns components.counter
+(ns components.playground.counter
   (:require [reagent.core :as r]))
 
 (defonce counter-state (r/atom 0))

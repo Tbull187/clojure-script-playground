@@ -1,4 +1,4 @@
-(ns components.header)
+(ns components.layout.header)
 
 (defn app-header []
   [:div.app-header

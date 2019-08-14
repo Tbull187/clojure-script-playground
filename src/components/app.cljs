@@ -1,6 +1,6 @@
 (ns components.app
-  (:require [components.header :refer [app-header]]
-            [components.body :refer [app-body]]))
+  (:require [components.layout.header :refer [app-header]]
+            [components.layout.body :refer [app-body]]))
 
 ;; top level UI container
 

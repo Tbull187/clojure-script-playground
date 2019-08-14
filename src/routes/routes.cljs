@@ -1,16 +1,16 @@
 (ns routes.routes
   (:import goog.history.Html5History)
+  
   (:require [reagent.core :as reagent]
             [secretary.core :as secretary :refer-macros [defroute]]
             
             [goog.events :as events]
             [goog.history.EventType :as EventType]
             
-            [components.container]
-            [components.header]
-            [components.todo]
-            [components.counter]
-            [components.request]))
+            [components.app :refer [playground-app]]
+            [components.playground.todo :refer [todo-app]]
+            [components.playground.counter :refer [counter]]
+            [components.playground.request :refer [request-example]]))
 
 
 (js/console.log "routes init")
@@ -54,11 +54,9 @@
 ;; going to end up refactoring this...
 (defmulti current-page #(@app-state :page))
 
-; (defmethod current-page :home [] [components.header/app-header])
-(defmethod current-page :home [] [components.container/app-container])
-
-(defmethod current-page :todo [] [components.todo/todo-app])
-(defmethod current-page :counter [] [components.counter/counter])
-(defmethod current-page :network-request [] [components.request/main])
+(defmethod current-page :home [] [playground-app])
+(defmethod current-page :todo [] [todo-app])
+(defmethod current-page :counter [] [counter])
+(defmethod current-page :network-request [] [request-example])
 (defmethod current-page :default [] [:div "Wat? dis da default page dum dum"])
 

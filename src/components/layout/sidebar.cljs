@@ -1,4 +1,4 @@
-(ns components.sidebar)
+(ns components.layout.sidebar)
 
 (defn app-sidebar []
   
