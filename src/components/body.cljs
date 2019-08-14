@@ -1,7 +1,7 @@
 (ns components.body
-  (:require [components.sidebar]))
+  (:require [components.sidebar :refer [app-sidebar]]))
 
 (defn app-body []
   [:div.app-body
-   [components.sidebar/app-sidebar]
+   [app-sidebar]
    [:div#content]])

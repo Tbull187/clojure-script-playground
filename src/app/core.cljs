@@ -1,26 +1,18 @@
 (ns app.core
   (:import goog.history.Html5History)
   (:require [reagent.core :as reagent]
-            [routes.routes :as routes]
-            [components.container]))
+            [routes.routes :refer [app-routes]]
+            [components.app :refer [playground-app]]))
 
 (enable-console-print!)
-
-;; APP STATE (doesn't get over-written on reload)
-; (defonce app-state (reagent/atom {}))
-
 
 (defn on-js-reload []
   ;; optionally touch your app-state to force rerendering depending on your application
   ;; (swap! app-state update-in [:__figwheel_counter] inc)
 )
 
-; (defn ^:export main []
-;   (routes/app-routes)
-;   (reagent/render [routes/current-page] 
-;                   (js/document.getElementById "app")))
 
 (defn ^:export main []
-  (routes/app-routes)
-  (reagent/render [components.container/app-container]
+  (app-routes)
+  (reagent/render [playground-app]
                   (js/document.getElementById "app")))
