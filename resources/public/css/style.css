@@ -11,6 +11,10 @@ body {
     padding: 0;
 }
 
+.example-container {
+    padding: 25px;
+}
+
 /* APP */
 .app-container {
     height: 100vh;

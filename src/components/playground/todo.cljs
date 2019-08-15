@@ -54,7 +54,7 @@
 
 
 (defn todo-app []
-  [:div.todo-container
+  [:div.example-container
    [:h2 "ClojureScript Playground!"]
    [:h3 "Todo:"]
    [todo-form]

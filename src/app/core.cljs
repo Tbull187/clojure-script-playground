@@ -52,7 +52,7 @@
   (defroute "/counter" []
     (swap! app-state assoc :page :counter))
   (defroute "/network-request" []
-    (swap! app-state assoc :page :network-request))
+    (swap! app-state assoc :page :request-example))
 
   (hook-browser-navigation!))
 

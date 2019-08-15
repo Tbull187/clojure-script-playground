@@ -12,7 +12,7 @@
   (reset! counter-state 0))
 
 (defn counter []
-  [:div.counter-container
+  [:div.example-container
    [:div "Counter:" @counter-state]
    [:div.button-spacer]
    [:input {:type "button" :value "Inc!" :on-click #(inc-counter)}]

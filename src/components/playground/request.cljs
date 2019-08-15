@@ -8,7 +8,7 @@
   (request-service/fetch-data))
 
 (defn request-example []
-  [:div.request-container
+  [:div.example-container
    [:p "try fetching some data with the cljs-http library:"]
    [:input 
     {:type "button" 
