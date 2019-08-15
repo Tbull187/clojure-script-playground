@@ -1,4 +1,4 @@
-(ns components.request
+(ns components.playground.request
   (:require [reagent.core :as r]
             [services.request :as request-service]))
 
@@ -7,8 +7,8 @@
 (defn data-cb []
   (request-service/fetch-data))
 
-(defn main []
-  [:div.request-container
+(defn request-example []
+  [:div.example-container
    [:p "try fetching some data with the cljs-http library:"]
    [:input 
     {:type "button" 

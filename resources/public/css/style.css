@@ -11,7 +11,11 @@ body {
     padding: 0;
 }
 
-/* CONTAINER */
+.example-container {
+    padding: 25px;
+}
+
+/* APP */
 .app-container {
     height: 100vh;
     width: 100vw;
@@ -51,15 +55,10 @@ body {
 }
 
 /* CONTENT */
-.content {
+
+#content {
     flex: 1;
 }
-
-
-
-
-
-
 
 /* COUNTER */
 .counter-container {

@@ -1,4 +1,4 @@
-(ns components.counter
+(ns components.playground.counter
   (:require [reagent.core :as r]))
 
 (defonce counter-state (r/atom 0))
@@ -12,7 +12,7 @@
   (reset! counter-state 0))
 
 (defn counter []
-  [:div.counter-container
+  [:div.example-container
    [:div "Counter:" @counter-state]
    [:div.button-spacer]
    [:input {:type "button" :value "Inc!" :on-click #(inc-counter)}]

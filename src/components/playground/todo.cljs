@@ -1,4 +1,4 @@
-(ns components.todo
+(ns components.playground.todo
   (:require [reagent.core :as r]))
 
 ; Todos is just a list of strings
@@ -54,7 +54,9 @@
 
 
 (defn todo-app []
-  [:div.todo-container
+
+  [:div.example-container
+   [:h2 "ClojureScript Playground!"]
    [:h3 "Todo:"]
    [todo-form]
    [:div#users]
