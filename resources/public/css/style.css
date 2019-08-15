@@ -27,6 +27,8 @@ body {
 /* BODY */
 .app-body {
     height: calc(100vh - 100px);
+    width: 100%;
+    display: flex;
 }
 
 /* SIDEBAR */
@@ -50,7 +52,7 @@ body {
 
 /* CONTENT */
 #content {
-    
+    flex: 1;
 }
 
 /* COUNTER */
