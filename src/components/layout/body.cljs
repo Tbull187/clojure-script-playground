@@ -1,5 +1,4 @@
 (ns components.layout.body
-
   (:require [components.layout.sidebar :refer [app-sidebar]]
             [components.playground.todo :refer [todo-app]]
             [components.layout.welcome :refer [welcome-page]]
@@ -7,18 +6,17 @@
             [components.playground.request :refer [request-example]]))
 
 (defn app-body [props]
-  
-  (js/console.log "app-body has props:" props)
-  (js/console.log "app-body :page" (:page props))
+  (js/console.log "app-body props:" props)
+  (js/console.log "app-body (:content props)" (:content props))
   
   [:div.app-body
    [app-sidebar]
    [:div#content
-    (when (= (:page props) :home)
+    (when (= (:content props) :home)
       [welcome-page])
-    (when (= (:page props) :todo)
+    (when (= (:content props) :todo)
       [todo-app])
-    (when (= (:page props) :counter)
+    (when (= (:content props) :counter)
       [counter])
-    (when (= (:page props) :request-example)
+    (when (= (:content props) :request-example)
       [request-example])]])

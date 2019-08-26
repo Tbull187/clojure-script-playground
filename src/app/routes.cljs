@@ -2,24 +2,9 @@
   (:import goog.history.Html5History)
   (:require [reagent.core :as reagent]
             [secretary.core :as secretary :refer-macros [defroute]]
-            
             [goog.events :as events]
             [goog.history.EventType :as EventType]
-            
-            [components.layout.container]            
-            [components.todo]
-            [components.counter]
-            [components.request]))
-
-
-(js/console.log "routes init")
-
-;; SCHEMA
-;; {
-;;  :content "symbol- The content component that should be displayed in div#content"
-;; }
-(defonce app-state (reagent/atom {}))
-
+            [app.state :refer [app-state]]))
 
 (defn hook-browser-navigation! []
   (doto (Html5History.)
@@ -35,9 +20,6 @@
 
   (defroute "/" []
     (swap! app-state assoc :content :home))
-
-  ;; When we match the route /todo
-    ;; display the todo-app component in the div#content
   
   (defroute "/todo" []
     (swap! app-state assoc :content :todo))
@@ -46,15 +28,6 @@
     (swap! app-state assoc :content :counter))
 
   (defroute "/network-request" []
-    (swap! app-state assoc :content :network-request))
+    (swap! app-state assoc :content :request-example))
 
   (hook-browser-navigation!))
-
-
-(defmulti current-page #(@app-state :content))
-(defmethod current-page :home [] [components.layout.container/app-container])
-(defmethod current-page :todo [] [components.todo/todo-app])
-(defmethod current-page :counter [] [components.counter/counter])
-(defmethod current-page :network-request [] [components.request/main])
-(defmethod current-page :default [] [:div "Wat? dis da default page dum dum"])
-
