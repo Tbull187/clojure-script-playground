@@ -2,5 +2,5 @@
 
 (defn app-header []
   [:div.app-header
-   [:h1 "ClojureScript Playground"]
-   [:img {:src "/resources/public/images/cljs-logo-120b.png"}]])
+   [:img.logo {:src "/images/cljs-logo-120b.png"}]
+   [:h1.heading "ClojureScript Playground"]])
