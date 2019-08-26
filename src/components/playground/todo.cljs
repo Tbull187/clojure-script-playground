@@ -56,8 +56,6 @@
 (defn todo-app []
 
   [:div.example-container
-   [:h2 "ClojureScript Playground!"]
-   [:h3 "Todo:"]
    [todo-form]
    [:div#users]
    [:a {:href "#/"} "Home"]])

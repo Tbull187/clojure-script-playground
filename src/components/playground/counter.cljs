@@ -15,7 +15,7 @@
   [:div.example-container
    [:div "Counter:" @counter-state]
    [:div.button-spacer]
-   [:input {:type "button" :value "Inc!" :on-click #(inc-counter)}]
+   [:input.button {:type "button" :value "Inc!" :on-click #(inc-counter)}]
    [:div.button-spacer]
    [:input {:type "button" :value "Clear!" :on-click #(clear-counter)}]
    [:a {:href "#/"} "Home"]])
