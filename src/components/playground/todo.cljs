@@ -31,20 +31,20 @@
          :value @val
          :on-change #(reset! val (-> % .-target .-value))
          :on-key-down #(case (.-key %)
-                         "Enter" (do (add-todo @val)(reset-val)) 
+                         "Enter" (do (add-todo @val)(reset-val))
                          nil)
          :placeholder "Enter a todo..."}]
 
        [:div.button-spacer]
 
-       [:input
+       [:input.button-primary
         {:type "button"
          :value "Add"
          :on-click (fn [] (add-todo @val) (reset-val))}]
 
        [:div.button-spacer]
 
-       [:input
+       [:input.button
         {:type "button"
          :value "Clear Todos"
          :on-click #(reset! todos [])}]
@@ -54,7 +54,6 @@
 
 
 (defn todo-app []
-
   [:div.example-container
    [todo-form]
    [:div#users]

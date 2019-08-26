@@ -10,10 +10,11 @@
 (defn request-example []
   [:div.example-container
    [:p "try fetching some data with the cljs-http library:"]
-   [:input 
-    {:type "button" 
-     :value "Fetch" 
+
+   [:input.button-primary
+    {:type "button"
+     :value "Fetch"
      :on-click #(data-cb)}]
+
    (when (not (empty? @data))
-     [:div "You gots some data"])
-   [:a {:href "#/"} "Home"]])
+     [:div "You gots some data"])])

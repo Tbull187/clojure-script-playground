@@ -2,4 +2,5 @@
 
 (defn welcome-page []
   [:div.example-container
-   [:p "welcome, this is the main page. Choose an example from the sidebar... "]])
+   [:p "Welcome internet traveller, you have stumbled upon the ClojureScript Playground, a collection of
+   humble ClojureScript code examples. Select an example from the sidebar to begin your adventure... "]])

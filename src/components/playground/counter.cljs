@@ -13,10 +13,12 @@
 
 (defn counter []
   [:div.example-container
-   [:div "Counter:" @counter-state]
-   [:div.button-spacer]
-   [:input.button {:type "button" :value "Inc!" :on-click #(inc-counter)}]
-   [:div.button-spacer]
-   [:input {:type "button" :value "Clear!" :on-click #(clear-counter)}]
-   [:a {:href "#/"} "Home"]])
+
+    [:input.button-primary {:type "button" :value "Increment" :on-click #(inc-counter)}]
+    [:div.button-spacer]
+    [:input.button {:type "button" :value "Clear" :on-click #(clear-counter)}]
+
+    [:div.counter-display @counter-state]
+
+    [:a {:href "#/"} "Home"]])
 
