@@ -11,5 +11,6 @@
      [:li { :on-click #(set! (.. js/window -location -href) "#/todo") }
       "Todo App"]
      [:li  { :on-click #(set! (.. js/window -location -href) "#/network-request")}
-      "Network Request Example"]]])
+      "Network Request Example"]
+     [:li { :on-click #(set! (.. js/window -location -href) "/request-example-cljs-ajax")}]]])
 

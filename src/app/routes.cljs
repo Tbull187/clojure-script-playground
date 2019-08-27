@@ -30,4 +30,7 @@
   (defroute "/network-request" []
     (swap! app-state assoc :content :request-example))
 
+  (defroute "/request-example-cljs-ajax" []
+    (swap! app-state assoc :content :cljs-ajax))
+
   (hook-browser-navigation!))

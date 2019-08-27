@@ -19,4 +19,6 @@
     (when (= (:content props) :counter)
       [counter])
     (when (= (:content props) :request-example)
-      [request-example])]])
+      [request-example])
+    (when (= (:content props) :cljs-http)
+      [:div "yeet yeet"])]])
