@@ -3,12 +3,11 @@
             [components.playground.todo :refer [todo-app]]
             [components.layout.welcome :refer [welcome-page]]
             [components.playground.counter :refer [counter]]
-            [components.playground.request :refer [request-example]]))
+            [components.playground.request-http :refer [request-example]]
+            [components.playground.request-ajax :refer [request-example-ajax]]
+            ))
 
 (defn app-body [props]
-  (js/console.log "app-body props:" props)
-  (js/console.log "app-body (:content props)" (:content props))
-
   [:div.app-body
    [app-sidebar]
    [:div#content
@@ -21,4 +20,4 @@
     (when (= (:content props) :request-example)
       [request-example])
     (when (= (:content props) :cljs-ajax)
-      [:div "yeet yeet"])]])
+      [request-example-ajax])]])

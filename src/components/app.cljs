@@ -3,12 +3,11 @@
             [components.layout.body :refer [app-body]]))
 
 (defn playground-app [props]
-  (js/console.log "playground-app props:" props)
-  ; (js/console.log "props.state", (deref (:state props)))
-  ; (js/console.log "props.state.test", (:test (deref (:state props))))
-  
+  ;(js/console.log "playground-app props:" props)
+
   [:div.playground-app
    [app-header]
-   [app-body 
-    {:content 
-     (:content (deref (:state props)))}]])
+
+   ;; We're extracting :state from props, dereferencing state, then extracting the value of content,
+   ;; and passing it into app-body with the key :content
+   [app-body {:content (:content (deref (:state props)))}]])

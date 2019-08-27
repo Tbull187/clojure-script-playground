@@ -3,6 +3,7 @@
 
 ; Todos is just a list of strings
 (defonce todos (r/atom (vector)))
+(defonce show-code (r/atom false))
 
 (defn add-todo [todo-text]
   (js/console.log "Adding Todo Item with text:" todo-text)
@@ -57,4 +58,10 @@
   [:div.example-container
    [todo-form]
    [:div#users]
-   [:a {:href "#/"} "Home"]])
+
+   [:input.button
+     {:type "button"
+      :value (str (if @show-code "Hide" "Show") " Code")
+      :on-click #(reset! show-code (not @show-code))}]
+    (when @show-code
+      [:div "coming soon. :P"])])

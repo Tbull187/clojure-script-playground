@@ -1,7 +1,6 @@
 (ns components.layout.sidebar)
 
 (defn app-sidebar []
-
    [:div.app-sidebar
     [:ul
      [:li { :on-click #(set! (.. js/window -location -href) "#/")}
@@ -10,8 +9,8 @@
       "Counter"]
      [:li { :on-click #(set! (.. js/window -location -href) "#/todo") }
       "Todo App"]
+     [:li { :on-click #(set! (.. js/window -location -href) "#/request-example-ajax")}
+      "Network Request: cljs-ajax"]
      [:li { :on-click #(set! (.. js/window -location -href) "#/network-request")}
-      "Network Request: cljs-http"]
-     [:li { :on-click #(set! (.. js/window -location -href) "#/request-example-cljs-ajax")}
-      "Network Request: cljs-ajax"]]])
+      "Network Request: cljs-http"]]])
 

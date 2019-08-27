@@ -9,15 +9,18 @@
   :dependencies [[org.clojure/clojure       "1.10.0"]
                  [org.clojure/clojurescript "1.10.520"]
                  [org.clojure/core.async    "0.4.500"]
+
+                 [clj-commons/secretary     "1.2.4"]
+
                  [reagent                   "0.8.1"]
                  [cljs-http                 "0.1.46"]
-                 [clj-commons/secretary     "1.2.4"]]
+                 [cljs-ajax                 "0.8.0"]]
 
   :plugins [[lein-figwheel "0.5.19"]
             [lein-cljsbuild "1.1.7" :exclusions [[org.clojure/clojure]]]]
 
   :source-paths ["src"]
-  :resource-paths ["resources"] 
+  :resource-paths ["resources"]
 
   :cljsbuild {:builds
               [{:id "dev"
@@ -27,7 +30,7 @@
                 ;; will cause figwheel to inject the figwheel client
                 ;; into your build
                 :figwheel {:on-jsload "app.core/on-js-reload"
-                           ;; automatically launches app in browser                           
+                           ;; automatically launches app in browser
                            :open-urls ["http://localhost:3449/index.html"]}
 
                 :compiler {:main app.core

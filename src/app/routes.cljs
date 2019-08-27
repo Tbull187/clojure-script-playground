@@ -20,7 +20,7 @@
 
   (defroute "/" []
     (swap! app-state assoc :content :home))
-  
+
   (defroute "/todo" []
     (swap! app-state assoc :content :todo))
 
@@ -30,7 +30,7 @@
   (defroute "/network-request" []
     (swap! app-state assoc :content :request-example))
 
-  (defroute "/request-example-cljs-ajax" []
+  (defroute "/request-example-ajax" []
     (swap! app-state assoc :content :cljs-ajax))
 
   (hook-browser-navigation!))
