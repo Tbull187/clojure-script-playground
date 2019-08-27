@@ -8,7 +8,7 @@
 (defn app-body [props]
   (js/console.log "app-body props:" props)
   (js/console.log "app-body (:content props)" (:content props))
-  
+
   [:div.app-body
    [app-sidebar]
    [:div#content
@@ -20,5 +20,5 @@
       [counter])
     (when (= (:content props) :request-example)
       [request-example])
-    (when (= (:content props) :cljs-http)
+    (when (= (:content props) :cljs-ajax)
       [:div "yeet yeet"])]])

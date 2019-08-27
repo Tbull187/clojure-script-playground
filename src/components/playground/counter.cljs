@@ -1,7 +1,9 @@
 (ns components.playground.counter
-  (:require [reagent.core :as r]))
+  (:require [reagent.core :as r]
+            [components.playground.counter-code :refer [counter-code]]))
 
 (defonce counter-state (r/atom 0))
+(defonce show-code (r/atom false))
 
 (defn inc-counter []
   "Increment the counter"
@@ -20,5 +22,7 @@
 
     [:div.counter-display @counter-state]
 
-    [:a {:href "#/"} "Home"]])
+    [:input.button {:type "button" :value (str (if @show-code "Hide" "Show") " Code") :on-click #(reset! show-code (not @show-code))}]
+    (when @show-code
+      (counter-code))])
 
