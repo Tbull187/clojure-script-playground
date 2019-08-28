@@ -14,6 +14,6 @@
       "Todo App"]
      [:li { :class (if (= (:content props) :cljs-ajax) "active") :on-click #(set-href "#/request-example-ajax")}
       "Network Request: cljs-ajax"]
-     [:li { :class (if (= (:content props) :request-example) "active") :on-click #(set-href "#/network-request")}
+     [:li { :class (if (= (:content props) :cljs-http) "active") :on-click #(set-href "#/request-example-http")}
       "Network Request: cljs-http"]]])
 

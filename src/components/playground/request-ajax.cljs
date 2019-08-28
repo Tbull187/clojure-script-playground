@@ -1,25 +1,37 @@
 (ns components.playground.request-ajax
     (:require [ajax.core :refer [GET]]
               [reagent.core :as r]
-              [clojure.string :refer [blank?]]))
+              [components.playground.request-ajax-code :refer [request-ajax-code]]))
 
-(defonce data (r/atom ""))
+(defonce github-users (r/atom (list)))
+(defonce loading      (r/atom false))
+(defonce show-code    (r/atom false))
 
 (defn handler [res]
-  (js/console.log "handling res" res)
-  ;;(js/console.log (map :login (:body response)))
-  (reset! data (str res)))
+  (prn (map #(get % "login") res))
+  (reset! loading false)
+  (reset! github-usernames (map #(get % "login") res)))
 
 (defn fetch-data []
+  "Get recent github logins"
+  (reset! loading true)
   (GET "https://api.github.com/users" {:params {:since 135}
+                                       :response-format :json
                                        :handler handler
                                        :error-handler (fn [res] (js/console.log res))}))
 
 (defn request-example-ajax []
   [:div.example-container
-    [:div "We can make network requests that resemble JQuery's ajax using the cljs-ajax library."]
+    [:div "We can make network requests that resemble JQuery's ajax using the "
+          [:a {:href "https://github.com/JulianBirch/cljs-ajax"} "cljs-ajax"] " library."]
+
     [:input.button-primary {:type "button" :value "Fetch" :on-click #(fetch-data)}]
+    [:div.button-spacer]
+    [:input.button {:type "button" :value "Show Code" :on-click #(reset! show-code (not @show-code)) }]
 
-
-    (when (not (blank? @data))
-      [:div "Your data:" @data])])
+    (when (not-empty @github-users)
+      [:div "Recent github users: " (str @github-users)])
+    (when @loading
+      [:img.loading {:src "/images/loading.gif"}])
+    (when @show-code
+      [request-ajax-code])])

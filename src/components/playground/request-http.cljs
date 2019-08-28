@@ -1,31 +1,42 @@
 (ns components.playground.request-http
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [reagent.core :as r]
-            ;[services.request :as request-service]
             [cljs-http.client :as http]
-            [cljs.core.async :refer [<!]]))
+            [cljs.core.async :refer [<!]]
+            [components.playground.request-http-code :refer [request-http-code]]))
 
-(defonce data (r/atom {}))
+(defonce github-users (r/atom (list)))
+(defonce loading      (r/atom false))
+(defonce show-code    (r/atom false))
+
+;; TODO: check the response and handle errors, either here or in the body of fetch-data
+(defn handler [res]
+  (reset! loading false)
+  (reset! github-users (map :login (:body res))))
 
 (defn fetch-data []
+  (reset! loading true)
   (go (let [response (<! (http/get "https://api.github.com/users"
                                    {:with-credentials? false
                                     :query-params {"since" 135}}))]
-        (js/console.log "yeet yeet!")
         (prn (:status response))
-        (prn (map :login (:body response))))))
-
-(defn data-cb []
-  (fetch-data))
+        (prn (map :login (:body response)))
+        (handler response))))
 
 (defn request-example []
   [:div.example-container
-   [:p "try fetching some data with the cljs-http library:"]
+    [:p "Another library that exists for network requests is cljs-http. This library leverages Clojure's
+    core.async library."]
 
-   [:input.button-primary
-    {:type "button"
-     :value "Fetch"
-     :on-click #(data-cb)}]
+    [:input.button-primary
+      {:type "button"
+      :value "Fetch"
+      :on-click #(fetch-data)}]
 
-   (when (not (empty? @data))
-     [:div "You gots some data"])])
+
+    (when (not-empty @github-users)
+      [:div (str @github-users)])
+    (when @loading
+      [:img.loading {:src "/images/loading.gif"}])
+    (when @show-code
+      [request-http-code])])

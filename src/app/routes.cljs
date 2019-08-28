@@ -27,8 +27,8 @@
   (defroute "/counter" []
     (swap! app-state assoc :content :counter))
 
-  (defroute "/network-request" []
-    (swap! app-state assoc :content :request-example))
+  (defroute "/request-example-http" []
+    (swap! app-state assoc :content :cljs-http))
 
   (defroute "/request-example-ajax" []
     (swap! app-state assoc :content :cljs-ajax))
