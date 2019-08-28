@@ -3,7 +3,11 @@
 
 ;; SCHEMA
 ;; {
-;;  :content symbol- The name of the current page
+;;  :content     [symbol] The name of the current page
 ;; }
+
+;; TODO:
+;; Create a map of CONSTANTS to be used as page name/active link
+
 (defonce app-state (r/atom {:test "hello state"}))
 

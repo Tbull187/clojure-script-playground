@@ -134,19 +134,29 @@ pre code {
 .app-sidebar {
     height: 100%;
     width: 200px;
+    margin-left: 20px;
 }
 
 .app-sidebar ul {
     list-style: none;
+    padding-top: 47px;
 }
 
 .app-sidebar li {
-    padding: 10px;
+    padding: 3px 6px;
+    color: #707070;
+    font-size: 15px;
+    line-height: 22px;
 }
 
 .app-sidebar li:hover {
-    background-color: #D3F1B5;
+    background-color: #d8f1c4;
+    color: #424242;
     cursor: pointer;
+}
+
+.active {
+    background-color: #d8f1c4;
 }
 
 /* CONTENT */

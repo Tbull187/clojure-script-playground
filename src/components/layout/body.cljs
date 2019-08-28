@@ -9,7 +9,7 @@
 
 (defn app-body [props]
   [:div.app-body
-   [app-sidebar]
+   [app-sidebar {:content (:content props)}]
    [:div#content
     (when (= (:content props) :home)
       [welcome-page])

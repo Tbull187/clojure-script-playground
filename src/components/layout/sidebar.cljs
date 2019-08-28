@@ -1,16 +1,19 @@
 (ns components.layout.sidebar)
 
-(defn app-sidebar []
+(defn set-href [route]
+  (set! (.. js/window -location -href) route))
+
+(defn app-sidebar [props]
    [:div.app-sidebar
     [:ul
-     [:li { :on-click #(set! (.. js/window -location -href) "#/")}
+     [:li { :class (if (= (:content props) :home) "active") :on-click #(set-href "#/")}
       "Home"]
-     [:li { :on-click #(set! (.. js/window -location -href) "#/counter")}
+     [:li { :class (if (= (:content props) :counter) "active") :on-click #(set-href "#/counter")}
       "Counter"]
-     [:li { :on-click #(set! (.. js/window -location -href) "#/todo") }
+     [:li { :class (if (= (:content props) :todo) "active") :on-click #(set-href "#/todo")}
       "Todo App"]
-     [:li { :on-click #(set! (.. js/window -location -href) "#/request-example-ajax")}
+     [:li { :class (if (= (:content props) :cljs-ajax) "active") :on-click #(set-href "#/request-example-ajax")}
       "Network Request: cljs-ajax"]
-     [:li { :on-click #(set! (.. js/window -location -href) "#/network-request")}
+     [:li { :class (if (= (:content props) :request-example) "active") :on-click #(set-href "#/network-request")}
       "Network Request: cljs-http"]]])
 
