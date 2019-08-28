@@ -1,7 +1,11 @@
 /* GLOBALS */
 
 body {
-    font-family: "Arial", "sans-serif";
+    font-family: 'Open Sans', 'sans-serif';
+    color: #444;
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 400;
 }
 
 .button-primary {
@@ -12,12 +16,9 @@ body {
     text-align: center;
     cursor: pointer;
     vertical-align: top;
-    padding-top: 0px;
-    padding-right: 16px;
-    padding-bottom: 0px;
-    padding-left: 16px;
+    padding: 0 16px;
     min-width: 80px;
-    height: 28px;
+    height: 30px;
     /* background-color: rgb(0, 120, 212); */
     background-color: #5881D8;
     color: rgb(255, 255, 255);
