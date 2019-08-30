@@ -14,7 +14,9 @@
 
                  [reagent                   "0.8.1"]
                  [cljs-http                 "0.1.46"]
-                 [cljs-ajax                 "0.8.0"]]
+                 [cljs-ajax                 "0.8.0"]
+
+                 [cljsjs/highlight          "9.12.0-2"]]
 
   :plugins [[lein-figwheel "0.5.19"]
             [lein-cljsbuild "1.1.7" :exclusions [[org.clojure/clojure]]]]

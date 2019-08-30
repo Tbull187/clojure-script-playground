@@ -1,6 +1,16 @@
 (ns components.playground.counter
   (:require [reagent.core :as r]
-            [components.playground.counter-code :refer [counter-code]]))
+            [components.playground.counter-code :refer [counter-code]]
+            [cljsjs.highlight]
+            [cljsjs.highlight.langs.clojure]
+            ))
+
+; (.highlightBlock js/hljs (-> js/document (.querySelector "code")))
+
+(prn (-> js/document (.querySelector "code")))
+
+(defn highlight-code []
+  (.highlightBlock js/hljs (-> js/document (.querySelector "code"))))
 
 (defonce counter-state (r/atom 0))
 (defonce show-code (r/atom false))
@@ -19,6 +29,8 @@
     [:input.button-primary {:type "button" :value "Increment" :on-click #(inc-counter)}]
     [:div.button-spacer]
     [:input.button {:type "button" :value "Clear" :on-click #(clear-counter)}]
+    [:div.button-spacer]
+    [:input {:type "button" :on-click #(highlight-code) :value "Highlight"}]
 
     [:div.counter-display @counter-state]
 

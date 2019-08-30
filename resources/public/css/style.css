@@ -92,13 +92,13 @@ img.loading {
     padding: 50px;
 }
 
-pre code {
+/* pre code {
     background-color: #eee;
     border: 1px solid #999;
     display: block;
     padding: 15px;
     margin-top: 10px;;
-}
+} */
 
 /* APP */
 .playground-app {
