@@ -1,8 +1,19 @@
-(ns components.playground.counter-code)
+(ns components.playground.counter-code
+  (:require [reagent.core :as r]
+            [cljsjs.highlight]
+            [cljsjs.highlight.langs.clojure]))
 
 (defn counter-code []
-  [:pre
-    [:code
+  (r/create-class
+   {:display-name "counter-code"
+    
+    :component-did-mount
+    (fn []
+      (.highlightBlock js/hljs (-> js/document (.querySelector "code"))))
+    
+    :reagent-render
+    (fn []
+      [:pre [:code
 "
 (ns components.playground.counter
   (:require [reagent.core :as r]))
@@ -22,4 +33,4 @@
     [:input.button-primary {:type \"button\" :value \"Increment\" :on-click #(inc-counter)}]
     [:div.button-spacer]
     [:input.button {:type \"button\" :value \"Clear\" :on-click #(clear-counter)}]
-    [:div.counter-display @counter-state]])"]])
+    [:div.counter-display @counter-state]])"]])}))
