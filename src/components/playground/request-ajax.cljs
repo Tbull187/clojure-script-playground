@@ -7,17 +7,18 @@
 (defonce loading      (r/atom false))
 (defonce show-code    (r/atom false))
 
-(defn handler [res]
+(defn success-handler [res]
   (prn (map #(get % "login") res))
   (reset! loading false)
-  (reset! github-usernames (map #(get % "login") res)))
+  (reset! github-users (map #(get % "login") res))
+  )
 
 (defn fetch-data []
   "Get recent github logins"
   (reset! loading true)
   (GET "https://api.github.com/users" {:params {:since 135}
                                        :response-format :json
-                                       :handler handler
+                                       :handler success-handler
                                        :error-handler (fn [res] (js/console.log res))}))
 
 (defn request-example-ajax []
@@ -30,7 +31,7 @@
     [:input.button {:type "button" :value "Show Code" :on-click #(reset! show-code (not @show-code)) }]
 
     (when (not-empty @github-users)
-      [:div "Recent github users: " (str @github-users)])
+      [:div (str @github-users)])
     (when @loading
       [:img.loading {:src "/images/loading.gif"}])
     (when @show-code

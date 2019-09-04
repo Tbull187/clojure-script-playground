@@ -1,8 +1,20 @@
-(ns components.playground.request-ajax-code)
+(ns components.playground.request-ajax-code
+  (:require [reagent.core :as r]
+            ;; Exposes the 'hljs' js global
+            [cljsjs.highlight]
+            [cljsjs.highlight.langs.clojure]))
 
 (defn request-ajax-code []
-  [:pre
-    [:code
+  (r/create-class 
+   {:display-name "request-ajax-code"
+    
+    :component-did-mount
+    (fn []
+      (.highlightBlock js/hljs (-> js/document (.querySelector "code"))))
+    
+    :reagent-render
+    (fn []
+      [:pre [:code
 "
 (ns components.playground.request-ajax
     (:require [ajax.core :refer [GET]]
@@ -29,4 +41,4 @@
     [:input.button {:type \"button\" :value \"Show Code\" :on-click #(reset! show-code (not @show-code)) }]
 
     (when (not-empty @github-usernames)
-      [:div \"Recent github users: \" (str @github-usernames)])])"]])
+      [:div \"Recent github users: \" (str @github-usernames)])])"]])}))
