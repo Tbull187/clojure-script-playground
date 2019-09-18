@@ -36,17 +36,14 @@ To create a production build run:
 And open your browser in `resources/public/index.html`. You will not
 get live reloading, nor a REPL.
 
-## Layout
+## Build Styles
 
-Current layout looks like:
-* app-container
-  * app-header
-  * app-body
-    * app-sidebar
-    * content-div
+To compile the sass files, make sure that sass is installed globally and run:
+
+    sass --watch src/styles:resources/pulic/css
 
 ## License
 
 Copyright © 2019
 
-Distributed under the Eclipse Public License either version 1.0 or (at your option) any later version.
+Distributed under the Eclipse Public License 1.0
