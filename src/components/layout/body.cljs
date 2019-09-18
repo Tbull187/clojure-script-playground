@@ -4,7 +4,9 @@
             [components.layout.welcome :refer [welcome-page]]
             [components.playground.counter :refer [counter]]
             [components.playground.request-http :refer [request-example]]
-            [components.playground.request-ajax :refer [request-example-ajax]]))
+            [components.playground.request-ajax :refer [request-example-ajax]]
+            [components.playground.reframe :refer [reframe]]
+            ))
 
 (defn app-body [props]
   [:div.app-body
@@ -19,4 +21,7 @@
     (when (= (:content props) :cljs-http)
       [request-example])
     (when (= (:content props) :cljs-ajax)
-      [request-example-ajax])]])
+      [request-example-ajax])
+    (when (= (:content props) :reframe)
+      [reframe]
+      )]])

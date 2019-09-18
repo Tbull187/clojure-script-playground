@@ -13,6 +13,7 @@
                  [clj-commons/secretary     "1.2.4"]
 
                  [reagent                   "0.8.1"]
+                 [re-frame                  "0.10.9"]
                  [cljs-http                 "0.1.46"]
                  [cljs-ajax                 "0.8.0"]
 

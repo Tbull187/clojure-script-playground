@@ -33,4 +33,7 @@
   (defroute "/request-example-ajax" []
     (swap! app-state assoc :content :cljs-ajax))
 
+  (defroute "/reframe" []
+    (swap! app-state assoc :content :reframe))
+
   (hook-browser-navigation!))

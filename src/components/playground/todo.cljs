@@ -56,12 +56,14 @@
 
 (defn todo-app []
   [:div.example-container
+   [:h2 "Todo"]
+   
    [todo-form]
    [:div#users]
 
    [:input.button
-     {:type "button"
-      :value (str (if @show-code "Hide" "Show") " Code")
-      :on-click #(reset! show-code (not @show-code))}]
-    (when @show-code
-      [:div "coming soon. :P"])])
+    {:type "button"
+     :value (str (if @show-code "Hide" "Show") " Code")
+     :on-click #(reset! show-code (not @show-code))}]
+   (when @show-code
+     [:div "coming soon. :P"])])

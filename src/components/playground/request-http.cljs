@@ -25,18 +25,20 @@
 
 (defn request-example []
   [:div.example-container
-    [:p "Another library that exists for network requests is cljs-http. This library leverages Clojure's
+   [:h2 "Making Requests: Cljs-http"]
+   
+   [:p "Another library that exists for network requests is cljs-http. This library leverages Clojure's
     core.async library."]
 
-    [:input.button-primary
-      {:type "button"
-      :value "Fetch"
-      :on-click #(fetch-data)}]
+   [:input.button-primary
+    {:type "button"
+     :value "Fetch"
+     :on-click #(fetch-data)}]
 
 
-    (when (not-empty @github-users)
-      [:div (str @github-users)])
-    (when @loading
-      [:img.loading {:src "/images/loading.gif"}])
-    (when @show-code
-      [request-http-code])])
+   (when (not-empty @github-users)
+     [:div (str @github-users)])
+   (when @loading
+     [:img.loading {:src "/images/loading.gif"}])
+   (when @show-code
+     [request-http-code])])

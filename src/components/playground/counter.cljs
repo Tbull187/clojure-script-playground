@@ -20,14 +20,15 @@
 
 (defn counter []
   [:div.example-container
+   [:h2 "Counter"]
+   
+   [:input.button-primary {:type "button" :value "Increment" :on-click #(inc-counter)}]
+   [:div.button-spacer]
+   [:input.button {:type "button" :value "Clear" :on-click #(clear-counter)}]
 
-    [:input.button-primary {:type "button" :value "Increment" :on-click #(inc-counter)}]
-    [:div.button-spacer]
-    [:input.button {:type "button" :value "Clear" :on-click #(clear-counter)}]
+   [:div.counter-display @counter-state]
 
-    [:div.counter-display @counter-state]
-
-    [:input.button {:type "button" :value (str (if @show-code "Hide" "Show") " Code") :on-click #(reset! show-code (not @show-code))}]
-    (when @show-code
-      [counter-code])])
+   [:input.button {:type "button" :value (str (if @show-code "Hide" "Show") " Code") :on-click #(reset! show-code (not @show-code))}]
+   (when @show-code
+     [counter-code])])
 
