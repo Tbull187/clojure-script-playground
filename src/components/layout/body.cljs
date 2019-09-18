@@ -6,7 +6,7 @@
             [components.playground.request-http.request-http :refer [request-example]]
             [components.playground.request-ajax.request-ajax :refer [request-example-ajax]]
             [components.playground.reframe :refer [reframe]]
-            ))
+            [components.playground.js-interop.main :refer [js-interop]]))
 
 (defn app-body [props]
   [:div.app-body
@@ -23,5 +23,6 @@
     (when (= (:content props) :cljs-ajax)
       [request-example-ajax])
     (when (= (:content props) :reframe)
-      [reframe]
-      )]])
+      [reframe])
+    (when (= (:content props) :js-interop)
+      [js-interop])]])

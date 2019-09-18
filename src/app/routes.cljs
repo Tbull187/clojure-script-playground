@@ -36,4 +36,7 @@
   (defroute "/reframe" []
     (swap! app-state assoc :content :reframe))
 
+  (defroute "/javascript-interop" []
+    (swap! app-state assoc :content :js-interop))
+
   (hook-browser-navigation!))

@@ -4,13 +4,15 @@ More than just a TODO app!
 
 ## Overview
 
-A collection of simple components / functionaly written in ClojureScript and corresponding libraries. Currently includes:
-* A counter app
-* A todo app
-* Data fetch example
-* More to come...
+A collection of examples illustrating how to implement common web development patterns in ClojureScript.
 
 ## Setup
+
+Install Leiningen, a Clojure build tool, [here](https://leiningen.org/)
+
+Clone this repo:
+
+    git clone https://github.com/Tbull187/clojure-script-todo.git
 
 To get an interactive development environment run:
 
@@ -40,7 +42,7 @@ get live reloading, nor a REPL.
 
 To compile the sass files, make sure that sass is installed globally and run:
 
-    sass --watch src/styles:resources/pulic/css
+    sass --watch src/styles:resources/public/css
 
 ## License
 
