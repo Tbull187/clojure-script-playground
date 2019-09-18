@@ -1,4 +1,4 @@
-(ns components.playground.request-ajax-code
+(ns components.playground.request-ajax.request-ajax-code
   (:require [reagent.core :as r]
             ;; Exposes the 'hljs' js global
             [cljsjs.highlight]

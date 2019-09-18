@@ -1,4 +1,4 @@
-(ns components.layout.welcome)
+(ns components.playground.welcome)
 
 (defn welcome-page []
   [:div.example-container

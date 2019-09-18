@@ -1,7 +1,7 @@
-(ns components.playground.request-ajax
+(ns components.playground.request-ajax.request-ajax
     (:require [ajax.core :refer [GET]]
               [reagent.core :as r]
-              [components.playground.request-ajax-code :refer [request-ajax-code]]))
+              [components.playground.request-ajax.request-ajax-code :refer [request-ajax-code]]))
 
 (defonce github-users (r/atom (list)))
 (defonce loading      (r/atom false))

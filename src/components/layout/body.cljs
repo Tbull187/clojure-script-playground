@@ -1,10 +1,10 @@
 (ns components.layout.body
   (:require [components.layout.sidebar :refer [app-sidebar]]
-            [components.playground.todo :refer [todo-app]]
-            [components.layout.welcome :refer [welcome-page]]
-            [components.playground.counter :refer [counter]]
-            [components.playground.request-http :refer [request-example]]
-            [components.playground.request-ajax :refer [request-example-ajax]]
+            [components.playground.todo.todo :refer [todo-app]]
+            [components.playground.welcome :refer [welcome-page]]
+            [components.playground.counter.counter :refer [counter]]
+            [components.playground.request-http.request-http :refer [request-example]]
+            [components.playground.request-ajax.request-ajax :refer [request-example-ajax]]
             [components.playground.reframe :refer [reframe]]
             ))
 

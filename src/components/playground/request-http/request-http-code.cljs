@@ -1,4 +1,4 @@
-(ns components.playground.request-http-code)
+(ns components.playground.request-http.request-http-code)
 
 (defn request-http-code []
   [:pre

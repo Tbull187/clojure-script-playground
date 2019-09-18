@@ -1,4 +1,4 @@
-(ns components.playground.counter-code
+(ns components.playground.counter.counter-code
   (:require [reagent.core :as r]
             [cljsjs.highlight]
             [cljsjs.highlight.langs.clojure]))

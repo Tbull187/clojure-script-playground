@@ -1,4 +1,4 @@
-(ns components.playground.todo
+(ns components.playground.todo.todo
   (:require [reagent.core :as r]))
 
 ; Todos is just a list of strings

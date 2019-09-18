@@ -1,6 +1,6 @@
-(ns components.playground.counter
+(ns components.playground.counter.counter
   (:require [reagent.core :as r]
-            [components.playground.counter-code :refer [counter-code]]
+            [components.playground.counter.counter-code :refer [counter-code]]
             [cljsjs.highlight]
             [cljsjs.highlight.langs.clojure]))
 

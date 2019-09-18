@@ -1,9 +1,9 @@
-(ns components.playground.request-http
+(ns components.playground.request-http.request-http
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [reagent.core :as r]
             [cljs-http.client :as http]
             [cljs.core.async :refer [<!]]
-            [components.playground.request-http-code :refer [request-http-code]]))
+            [components.playground.request-http.request-http-code :refer [request-http-code]]))
 
 (defonce github-users (r/atom (list)))
 (defonce loading      (r/atom false))
