@@ -2,4 +2,6 @@
   (:require [re-frame.core]))
 
 (defn reframe []
-  [:div "hello world"])
+  [:div.example-container
+    [:h2 "Re-Frame"]
+    [:div "Its (kinda) like Redux for ClojureScript!"]])

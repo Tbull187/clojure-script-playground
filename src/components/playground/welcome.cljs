@@ -3,7 +3,10 @@
 (defn welcome-page []
   [:div.example-container
    [:h1 "Welcome"]
-   [:p "Welcome internet traveller, you have stumbled upon the ClojureScript Playground, a collection of
-   humble ClojureScript code examples. Select an example from the sidebar to begin your adventure... "]
+   [:p "Welcome internet traveller to the ClojureScript Playground, a collection of
+    interactive code examples that demonstrate common web-development patterns implemented in ClojureScript. 
+    Select a topic from the sidenav to begin your adventure."]
    [:h2 "What is ClojureScript?"]
-   [:p "lorum ipsum"]])
+   [:p "Somewhat confusingly, ClojureScript is not a language itself but rather a
+    compiler! The ClojureScript compiler takes code written in the programming language
+    Clojure, and outputs javascript. For more official overview visit " [:a {:href "www.clojurescript.org" :target "_blank"} "www.clojurescript.org"]]])

@@ -69,6 +69,7 @@ goog.addDependency("../app/state.js", ['app.state'], ['reagent.core', 'cljs.core
 goog.addDependency("../components/layout/header.js", ['components.layout.header'], ['cljs.core']);
 goog.addDependency("../components/playground/todo/todo.js", ['components.playground.todo.todo'], ['reagent.core', 'cljs.core']);
 goog.addDependency("../components/layout/sidebar.js", ['components.layout.sidebar'], ['cljs.core']);
+goog.addDependency("../components/playground/js_interop/main.js", ['components.playground.js_interop.main'], ['cljs.core']);
 goog.addDependency("../re_frame/interop.js", ['re_frame.interop'], ['reagent.ratom', 'reagent.core', 'cljs.core', 'goog.async.nextTick']);
 goog.addDependency("../re_frame/loggers.js", ['re_frame.loggers'], ['cljs.core', 'clojure.set']);
 goog.addDependency("../re_frame/trace.js", ['re_frame.trace'], ['re_frame.interop', 'goog.functions', 'cljs.core', 're_frame.loggers']);
@@ -121,7 +122,7 @@ goog.addDependency("../ajax/xhrio.js", ['ajax.xhrio'], ['goog.net.XhrManager', '
 goog.addDependency("../ajax/core.js", ['ajax.core'], ['ajax.formats', 'ajax.xml_http_request', 'ajax.transit', 'ajax.json', 'ajax.url', 'ajax.interceptors', 'cljs.core', 'ajax.ring', 'ajax.easy', 'ajax.simple', 'ajax.protocols', 'ajax.util', 'clojure.string', 'ajax.xhrio']);
 goog.addDependency("../components/playground/request_ajax/request_ajax_code.js", ['components.playground.request_ajax.request_ajax_code'], ['reagent.core', 'cljs.core', 'cljsjs.highlight.langs.clojure', 'cljsjs.highlight']);
 goog.addDependency("../components/playground/request_ajax/request_ajax.js", ['components.playground.request_ajax.request_ajax'], ['ajax.core', 'reagent.core', 'cljs.core', 'components.playground.request_ajax.request_ajax_code']);
-goog.addDependency("../components/layout/body.js", ['components.layout.body'], ['components.playground.todo.todo', 'components.layout.sidebar', 'components.playground.reframe', 'cljs.core', 'components.playground.request_http.request_http', 'components.playground.welcome', 'components.playground.counter.counter', 'components.playground.request_ajax.request_ajax']);
+goog.addDependency("../components/layout/body.js", ['components.layout.body'], ['components.playground.todo.todo', 'components.layout.sidebar', 'components.playground.js_interop.main', 'components.playground.reframe', 'cljs.core', 'components.playground.request_http.request_http', 'components.playground.welcome', 'components.playground.counter.counter', 'components.playground.request_ajax.request_ajax']);
 goog.addDependency("../components/app.js", ['components.app'], ['components.layout.header', 'cljs.core', 'components.layout.body']);
 goog.addDependency("../secretary/core.js", ['secretary.core'], ['cljs.core', 'clojure.string', 'clojure.walk']);
 goog.addDependency("../app/routes.js", ['app.routes'], ['app.state', 'reagent.core', 'cljs.core', 'goog.history.EventType', 'goog.history.Html5History', 'secretary.core', 'goog.events']);

@@ -8,7 +8,7 @@ goog.require('app.routes');
 goog.require('app.state');
 cljs.core.enable_console_print_BANG_.call(null);
 app.core.on_js_reload = (function app$core$on_js_reload(){
-return null;
+return cljs.core.swap_BANG_.call(null,app.state.app_state,cljs.core.update_in,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"__figwheel_counter","__figwheel_counter",-1660671811)], null),cljs.core.inc);
 });
 app.core.main = (function app$core$main(){
 app.routes.app_routes.call(null);
@@ -17,4 +17,4 @@ return reagent.core.render.call(null,new cljs.core.PersistentVector(null, 2, 5, 
 });
 goog.exportSymbol('app.core.main', app.core.main);
 
-//# sourceMappingURL=core.js.map?rel=1568770680867
+//# sourceMappingURL=core.js.map?rel=1569209609485

@@ -36,6 +36,16 @@ h2 {
     font-weight: 400;
 }
 
+a {
+    color: $link-color;
+    &:hover {
+        color: $link-hover-color;
+    }
+    &:visited {
+        color: $link-visited-color;
+    }
+}
+
 .button-primary {
     font-size: 14px;
     font-weight: 400;

@@ -16,6 +16,8 @@
       "Network Request: cljs-ajax"]
      [:li { :class (if (= (:content props) :cljs-http) "active") :on-click #(set-href "#/request-example-http")}
       "Network Request: cljs-http"]
-     [:li { :class (if (= (:content props) :reframe) "active") :on-click #(set-href "#/reframe")} 
-      "Re-Frame"]]])
+     [:li { :class (if (= (:content props) :reframe) "active") :on-click #(set-href "#/reframe")}
+      "Re-Frame"]
+     [:li { :class (if (= (:content props) :js-interop) "active") :on-click #(set-href "#/javascript-interop")}
+      "JavaScript Interop"]]])
 

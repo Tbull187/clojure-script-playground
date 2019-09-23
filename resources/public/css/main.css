@@ -87,6 +87,16 @@ h2 {
   font-weight: 400;
 }
 
+a {
+  color: #3548A7;
+}
+a:hover {
+  color: #0355e2;
+}
+a:visited {
+  color: #922790;
+}
+
 .button-primary {
   font-size: 14px;
   font-weight: 400;
