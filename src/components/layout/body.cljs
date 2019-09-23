@@ -3,10 +3,13 @@
             [components.playground.todo.todo :refer [todo-app]]
             [components.playground.welcome :refer [welcome-page]]
             [components.playground.counter.counter :refer [counter]]
-            [components.playground.request-http.request-http :refer [request-example]]
-            [components.playground.request-ajax.request-ajax :refer [request-example-ajax]]
+
+            [components.playground.request_http.request_http :refer [request-example]]
+            [components.playground.request_ajax.request_ajax :refer [request-example-ajax]]
+
             [components.playground.reframe :refer [reframe]]
-            [components.playground.js-interop.main :refer [js-interop]]))
+
+            [components.playground.js_interop.main :refer [js-interop]]))
 
 (defn app-body [props]
   [:div.app-body
@@ -19,7 +22,8 @@
     (when (= (:content props) :counter)
       [counter])
     (when (= (:content props) :cljs-http)
-      [request-example])
+      [request-example]
+      )
     (when (= (:content props) :cljs-ajax)
       [request-example-ajax])
     (when (= (:content props) :reframe)

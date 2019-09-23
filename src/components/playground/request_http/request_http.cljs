@@ -1,4 +1,4 @@
-(ns components.playground.request-http.request-http
+(ns components.playground.request_http.request_http
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [reagent.core :as r]
             [cljs-http.client :as http]
@@ -26,7 +26,7 @@
 (defn request-example []
   [:div.example-container
    [:h2 "Making Requests: Cljs-http"]
-   
+
    [:p "Another library that exists for network requests is cljs-http. This library leverages Clojure's
     core.async library."]
 
