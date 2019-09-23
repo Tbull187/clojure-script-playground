@@ -38,11 +38,11 @@ h2 {
 
 a {
     color: $link-color;
-    &:hover {
-        color: $link-hover-color;
-    }
     &:visited {
         color: $link-visited-color;
+    }
+    &:hover {
+        color: $link-hover-color;
     }
 }
 
@@ -218,4 +218,8 @@ img.loading {
     justify-content: space-between;
     width: 400px;
     padding: 5px 0;
+}
+
+#todo-list {
+    padding: 10px 0;
 }
