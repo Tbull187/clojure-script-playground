@@ -1,4 +1,4 @@
-(ns components.playground.js-interop.main)
+(ns components.playground.js_interop.main)
 
 (defn js-interop []
   [:div.example-container

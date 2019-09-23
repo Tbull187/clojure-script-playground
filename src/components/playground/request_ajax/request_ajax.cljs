@@ -1,4 +1,4 @@
-(ns components.playground.request-ajax.request-ajax
+(ns components.playground.request_ajax.request_ajax
     (:require [ajax.core :refer [GET]]
               [reagent.core :as r]
               [components.playground.request-ajax.request-ajax-code :refer [request-ajax-code]]))
@@ -24,7 +24,7 @@
 (defn request-example-ajax []
   [:div.example-container
    [:h2 "Making Requests: Cljs-Ajax"]
-   
+
    [:div "We can make network requests that resemble JQuery's ajax using the " [:a {:href "https://github.com/JulianBirch/cljs-ajax"} "cljs-ajax"] " library."]
 
    [:input.button-primary {:type "button" :value "Fetch" :on-click #(fetch-data)}]
