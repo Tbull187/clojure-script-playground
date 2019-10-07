@@ -12,4 +12,4 @@ return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMP
 })], null));
 });
 
-//# sourceMappingURL=request_ajax_code.js.map?rel=1568770074933
+//# sourceMappingURL=request_ajax_code.js.map?rel=1569211511979

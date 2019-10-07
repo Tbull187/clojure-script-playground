@@ -22,4 +22,4 @@ return components.layout.sidebar.set_href.call(null,"#/javascript-interop");
 })], null),"JavaScript Interop"], null)], null)], null);
 });
 
-//# sourceMappingURL=sidebar.js.map?rel=1569206535401
+//# sourceMappingURL=sidebar.js.map?rel=1569211510608

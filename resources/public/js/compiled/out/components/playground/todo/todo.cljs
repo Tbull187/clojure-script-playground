@@ -1,38 +1,47 @@
 (ns components.playground.todo.todo
   (:require [reagent.core :as r]))
 
-; Todos is just a list of strings
+; Todos is a vector of todo-items
 (defonce todos (r/atom (vector)))
 (defonce show-code (r/atom false))
+(defonce index (r/atom 0))
 
-(defn add-todo [todo-text]
-  (js/console.log "Adding Todo Item with text:" todo-text)
-  (swap! todos conj todo-text))
+(defn todo-item [id text]
+  {:id id
+   :text text})
 
-(defn delete-todo [todo-text]
-  (js/console.log "Deleting todo:" todo-text)
+(defn add [todo]
+  "Add a todo to the list"
+  (prn "adding todo with id:" (todo :id) "and text:" (todo :text))
+  (if-not (clojure.string/blank? (:text todo))
+    (swap! todos conj todo)))
+
+(defn delete-todo [todo]
   ;swap! takes a function that recieves the current value, which you can use for updating.
-  (swap! todos (fn [c] (remove #{todo-text} c))))
+  (swap! todos (fn [c] (remove #{todo} c))))
 
 
-(defn todo-elem [text]
+(defn todo-elem [todo]
   (fn []
     [:li.list-item
-     [:span text]
+     [:span (todo :text)]
      [:div.button-spacer]
-     [:input {:type "button" :value "Delete" :on-click #(delete-todo text)}]]))
+     [:input.button {:type "button" :value "Delete" :on-click #(delete-todo todo)}]]))
 
 (defn todo-form []
-  (let [val        (r/atom "")
-        reset-val #(reset! val "")]
+  (let [input-val        (r/atom "")
+        reset-val #(reset! input-val "")]
     (fn []
       [:<>
        [:input
         {:type "text"
-         :value @val
-         :on-change #(reset! val (-> % .-target .-value))
+         :value @input-val
+         :on-change #(reset! input-val (-> % .-target .-value))
          :on-key-down #(case (.-key %)
-                         "Enter" (do (add-todo @val)(reset-val))
+                        ;  "Enter" (do (add-todo @val)(reset-val))
+                         "Enter" (do 
+                                   (add (todo-item @index @input-val)) 
+                                   (reset-val))
                          nil)
          :placeholder "Enter a todo..."}]
 
@@ -41,7 +50,7 @@
        [:input.button-primary
         {:type "button"
          :value "Add"
-         :on-click (fn [] (add-todo @val) (reset-val))}]
+         :on-click (fn [] (add (todo-item @index @input-val)) (reset-val))}]
 
        [:div.button-spacer]
 
@@ -49,6 +58,7 @@
         {:type "button"
          :value "Clear Todos"
          :on-click #(reset! todos [])}]
+       
        [:ul#todo-list
         (for [todo @todos]
           ^{:key todo} [todo-elem todo])]])))

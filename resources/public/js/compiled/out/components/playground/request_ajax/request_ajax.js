@@ -17,14 +17,14 @@ if((typeof components !== 'undefined') && (typeof components.playground !== 'und
 components.playground.request_ajax.request_ajax.show_code = reagent.core.atom.call(null,false);
 }
 components.playground.request_ajax.request_ajax.success_handler = (function components$playground$request_ajax$request_ajax$success_handler(res){
-cljs.core.prn.call(null,cljs.core.map.call(null,(function (p1__28681_SHARP_){
-return cljs.core.get.call(null,p1__28681_SHARP_,"login");
+cljs.core.prn.call(null,cljs.core.map.call(null,(function (p1__46919_SHARP_){
+return cljs.core.get.call(null,p1__46919_SHARP_,"login");
 }),res));
 
 cljs.core.reset_BANG_.call(null,components.playground.request_ajax.request_ajax.loading,false);
 
-return cljs.core.reset_BANG_.call(null,components.playground.request_ajax.request_ajax.github_users,cljs.core.map.call(null,(function (p1__28682_SHARP_){
-return cljs.core.get.call(null,p1__28682_SHARP_,"login");
+return cljs.core.reset_BANG_.call(null,components.playground.request_ajax.request_ajax.github_users,cljs.core.map.call(null,(function (p1__46920_SHARP_){
+return cljs.core.get.call(null,p1__46920_SHARP_,"login");
 }),res));
 });
 components.playground.request_ajax.request_ajax.fetch_data = (function components$playground$request_ajax$request_ajax$fetch_data(){
@@ -43,4 +43,4 @@ return cljs.core.reset_BANG_.call(null,components.playground.request_ajax.reques
 })], null)], null),(cljs.core.truth_(cljs.core.not_empty.call(null,cljs.core.deref.call(null,components.playground.request_ajax.request_ajax.github_users)))?new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null,components.playground.request_ajax.request_ajax.github_users))], null):null),(cljs.core.truth_(cljs.core.deref.call(null,components.playground.request_ajax.request_ajax.loading))?new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"img.loading","img.loading",-384254687),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"src","src",-1651076051),"/images/loading.gif"], null)], null):null),(cljs.core.truth_(cljs.core.deref.call(null,components.playground.request_ajax.request_ajax.show_code))?new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [components.playground.request_ajax.request_ajax_code.request_ajax_code], null):null)], null);
 });
 
-//# sourceMappingURL=request_ajax.js.map?rel=1568770420716
+//# sourceMappingURL=request_ajax.js.map?rel=1569211511994

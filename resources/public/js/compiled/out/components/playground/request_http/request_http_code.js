@@ -5,4 +5,4 @@ components.playground.request_http.request_http_code.request_http_code = (functi
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"pre","pre",2118456869),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"code","code",1586293142),"barf. comiing soon."], null)], null);
 });
 
-//# sourceMappingURL=request_http_code.js.map?rel=1568770619264
+//# sourceMappingURL=request_http_code.js.map?rel=1569211511922

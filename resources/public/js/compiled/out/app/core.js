@@ -17,4 +17,4 @@ return reagent.core.render.call(null,new cljs.core.PersistentVector(null, 2, 5, 
 });
 goog.exportSymbol('app.core.main', app.core.main);
 
-//# sourceMappingURL=core.js.map?rel=1569209609485
+//# sourceMappingURL=core.js.map?rel=1570486574213

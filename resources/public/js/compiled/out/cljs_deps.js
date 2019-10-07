@@ -127,3 +127,4 @@ goog.addDependency("../components/app.js", ['components.app'], ['components.layo
 goog.addDependency("../secretary/core.js", ['secretary.core'], ['cljs.core', 'clojure.string', 'clojure.walk']);
 goog.addDependency("../app/routes.js", ['app.routes'], ['app.state', 'reagent.core', 'cljs.core', 'goog.history.EventType', 'goog.history.Html5History', 'secretary.core', 'goog.events']);
 goog.addDependency("../app/core.js", ['app.core'], ['app.state', 'components.app', 'reagent.core', 'cljs.core', 'app.routes', 'goog.history.Html5History']);
+goog.addDependency("../cljs/user/todo_code7B4C18E.js", ['cljs.user.todo_code7B4C18E'], ['cljs.core']);

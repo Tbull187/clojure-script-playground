@@ -90,11 +90,11 @@ h2 {
 a {
   color: #3548A7;
 }
-a:hover {
-  color: #0355e2;
-}
 a:visited {
   color: #922790;
+}
+a:hover {
+  color: #0355e2;
 }
 
 .button-primary {
@@ -267,6 +267,10 @@ img.loading {
   justify-content: space-between;
   width: 400px;
   padding: 5px 0;
+}
+
+#todo-list {
+  padding: 10px 0;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -7,4 +7,4 @@ if((typeof app !== 'undefined') && (typeof app.state !== 'undefined') && (typeof
 app.state.app_state = reagent.core.atom.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"test","test",577538877),"hello state"], null));
 }
 
-//# sourceMappingURL=state.js.map?rel=1567734171964
+//# sourceMappingURL=state.js.map?rel=1569211503842
