@@ -1,7 +1,7 @@
 (ns components.playground.todo.todo
   (:require [reagent.core :as r]))
 
-; Todos is just a list of strings
+; Todos is a vector of todo-items
 (defonce todos (r/atom (vector)))
 (defonce show-code (r/atom false))
 (defonce index (r/atom 0))
@@ -13,8 +13,8 @@
 (defn add [todo]
   "Add a todo to the list"
   (prn "adding todo with id:" (todo :id) "and text:" (todo :text))
-  (swap! todos conj todo)
-  )
+  (if-not (clojure.string/blank? (:text todo))
+    (swap! todos conj todo)))
 
 (defn delete-todo [todo]
   ;swap! takes a function that recieves the current value, which you can use for updating.
