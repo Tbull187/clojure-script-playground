@@ -1,0 +1,72 @@
+@import 'variables';
+
+/* APP */
+.playground-app {
+    height: 100vh;
+    width: 100vw;
+}
+
+/* HEADER */
+.app-header {
+    height: 100px;
+    color: white;
+    background-image: linear-gradient(to right, #0f2242, #2351a1);
+    display: flex;
+    align-items: center;
+}
+
+.app-header .logo {
+    height: 70px;
+    width: 70px;
+    margin-left: 10px;
+}
+
+.app-header .heading {
+    font-size: 36px;
+    line-height: 60px;
+    font-weight: 400;
+    padding-left: 20px;
+}
+
+/* BODY */
+.app-body {
+    height: calc(100vh - 100px);
+    width: 100%;
+    display: flex;
+}
+
+/* SIDEBAR */
+.app-sidebar {
+    height: 100%;
+    width: 200px;
+    min-width: 200px;
+    margin-left: 20px;
+}
+
+.app-sidebar ul {
+    padding-top: 47px;
+    list-style: none;
+}
+
+.app-sidebar li {
+    padding: 3px 6px;
+    color: $sidebar-font-color;
+    font-size: 15px;
+    line-height: 22px;
+}
+
+.app-sidebar li:hover {
+    background-color: #d8f1c4;
+    color: #424242;
+    cursor: pointer;
+}
+
+.active {
+    background-color: #d8f1c4;
+}
+
+/* CONTENT */
+
+#content {
+    flex: 1;
+}

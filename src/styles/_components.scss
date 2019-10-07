@@ -1,0 +1,27 @@
+@import 'variables';
+
+/* COUNTER */
+.counter-container {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.counter-display {
+    margin: 25px 0;
+}
+
+/* TODO */
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    padding: 5px 0;
+}
+
+#todo-list {
+    padding: 10px 0;
+}
+
+.btn-container {
+    margin-top: 15px;
+}

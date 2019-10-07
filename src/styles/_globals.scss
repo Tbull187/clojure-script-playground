@@ -1,0 +1,61 @@
+@import 'variables';
+
+body {
+    font-family: 'Open Sans', 'sans-serif';
+    color: $main-font-color;
+    font-size: $font-size-normal;
+    line-height: 25px;
+    font-weight: 400;
+}
+
+code.hljs.clojure {
+    background-color: $code-background-color;
+    font-family: monospace;
+    line-height: 20px;
+    padding: 0 .5em .5em .5em;
+    margin-top: 15px;
+}
+
+h1 {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    color: $light-blue-color;
+    font-size: 49px;
+    line-height: 50px;
+    font-weight: 300;
+}
+
+h2 {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    color: $dark-blue-color;
+    font-size: 33px;
+    line-height: 50px;
+    font-weight: 400;
+}
+
+a {
+    color: $link-color;
+    &:visited {
+        color: $link-visited-color;
+    }
+    &:hover {
+        color: $link-hover-color;
+    }
+}
+
+.button-spacer {
+    width: 10px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+img.loading {
+    display: block;
+    margin-top: 10px;
+}
+
+.example-container {
+    padding: 25px 50px 50px 50px;
+}

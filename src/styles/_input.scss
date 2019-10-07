@@ -1,0 +1,20 @@
+input[type=text] {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    border: 1px solid #c8c8c8;
+    border-radius: 0;
+    font-weight: 300;
+    font-size: 14px;
+    color: #333;
+    height: 32px;
+    padding: 6px 12px 7px;
+    width: 100%;
+    min-width: 180px;
+    outline: 0;
+    text-overflow: ellipsis;
+    &:hover {
+        border-color: #767676;
+    }
+}
