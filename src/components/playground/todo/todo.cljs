@@ -15,11 +15,14 @@
 (defn add [todo]
   "Add a todo-item to the list"
   (if-not (str/blank? (:text todo))
-    (swap! todos conj todo)))
+    (do (pr todo)(swap! todos conj todo))
+    ))
 
 (defn delete-todo [todo]
   "Deletes a todo-item from the list"
-  (swap! todos (fn [c] (remove #{todo} c))))
+  ; (swap! todos (fn [c] (remove #{todo} c)))
+  (swap! todos (fn [c] (remove #{todo :id} c)))
+  )
 
 (defn todo-elem [todo]
   "Represents a todo-item in our UI"
@@ -34,17 +37,20 @@
         reset-val #(reset! input-val "")]
     (fn []
       [:<>
-       [:input
-        {:type "text"
-         :value @input-val
-         :on-change #(reset! input-val (-> % .-target .-value))
-         :on-key-down #(case (.-key %)
-                         "Enter" (do
-                                   (add (todo-item @index @input-val))
-                                   (reset-val))
-                         nil)
-         :placeholder "Enter a todo..."}]
+       [:div.input-container
+        [:input
+         {:type "text"
+          :value @input-val
+          :on-change #(reset! input-val (-> % .-target .-value))
+          :on-key-down #(case (.-key %)
+                          "Enter" (do
+                                    (add (todo-item @index @input-val))
+                                    (swap! index inc)
+                                    (reset-val))
+                          nil)
+          :placeholder "Enter a todo..."}]]
        
+
        [:div.btn-container
         [:input.button-primary
          {:type "button"
