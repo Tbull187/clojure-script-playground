@@ -6,15 +6,15 @@ More than just a TODO app!
 
 A collection of examples illustrating how to implement common web development patterns in ClojureScript.
 
-## Setup
+## Development Setup
 
-Install Leiningen, a Clojure build tool, [here](https://leiningen.org/)
+Prerequisites: Install Leiningen, a Clojure build tool, [here](https://leiningen.org/)
 
 Clone this repo:
 
     git clone https://github.com/Tbull187/clojure-script-todo.git
 
-To get an interactive development environment run:
+To get an interactive development environment running:
 
     lein figwheel
 
@@ -40,8 +40,12 @@ get live reloading, nor a REPL.
 
 ## Build Styles
 
-To compile the sass files, make sure that sass is installed globally and run:
+The project uses scss styles for development which get compiled to css. Make sure that sass is installed globally:
 
+    npm install sass -g
+
+Tell sass to watch your scss files and compile them to css:
+    
     sass --watch src/styles:resources/public/css
 
 ## License
