@@ -14,5 +14,5 @@ pom.xml
 .repl
 .nrepl-port
 
-deployment_instructions.txt
+deployment_instructions.md
 .DS_Store
