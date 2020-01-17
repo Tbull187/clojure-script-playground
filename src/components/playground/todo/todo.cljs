@@ -1,28 +1,25 @@
 (ns components.playground.todo.todo
   (:require [reagent.core :as r]
             [clojure.string :as str]
-            [components.playground.todo.todo-code]))
+            [components.playground.todo.todo_code :refer [todo-code]]))
 
 (defonce todos (r/atom (vector)))
 (defonce show-code (r/atom false))
 (defonce index (r/atom 0))
 
 (defn todo-item [id text]
-  "Represents a todo-item in our system"
+  "Represents a todo-item object"
   {:id id
    :text text})
 
 (defn add [todo]
   "Add a todo-item to the list"
   (if-not (str/blank? (:text todo))
-    (do (pr todo)(swap! todos conj todo))
-    ))
+    (swap! todos conj todo)))
 
 (defn delete-todo [todo]
   "Deletes a todo-item from the list"
-  ; (swap! todos (fn [c] (remove #{todo} c)))
-  (swap! todos (fn [c] (remove #{todo :id} c)))
-  )
+  (swap! todos (fn [c] (remove #{todo :id} c))))
 
 (defn todo-elem [todo]
   "Represents a todo-item in our UI"
@@ -55,7 +52,10 @@
         [:input.button-primary
          {:type "button"
           :value "Add"
-          :on-click (fn [] (add (todo-item @index @input-val)) (reset-val))}]
+          :on-click (fn [] 
+                      (add (todo-item @index @input-val)) 
+                      (swap! index inc) 
+                      (reset-val))}]
         [:div.button-spacer]
         [:input.button
          {:type "button"
@@ -77,5 +77,4 @@
      :value (str (if @show-code "Hide" "Show") " Code")
      :on-click #(reset! show-code (not @show-code))}]
    (when @show-code
-     [:div "coming soon. :P"]
-     )])
+     [todo-code])])
